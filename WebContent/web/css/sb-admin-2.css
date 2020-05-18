@@ -7554,7 +7554,7 @@ button.bg-dark:focus {
 
 .mt-5,
 .my-5 {
-  margin-top: 3rem !important;
+  margin-top: 1rem !important;
 }
 
 .mr-5,
@@ -10584,7 +10584,7 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
+  background: url("../img/camaleon2.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -10996,3 +10996,16 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+#txtIngIndirect {
+  font-family: 'Nunito', serif;
+  text-align: center;
+  margin-top: 1rem;
+    margin-left: 8rem;
+    margin-bottom: 0rem;
+    color: white;        
+    font-size: 5rem;    
+}
+
+
+
