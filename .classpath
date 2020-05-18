@@ -24,5 +24,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/MySQL JDBC Driver"/>
+	<classpathentry kind="lib" path="librerias/Apache_Commons_IO/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="librerias/Driver_MySQL_Connector_J/mysql-connector-java-8.0.19.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
