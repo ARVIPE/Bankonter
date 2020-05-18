@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="proyectoBankonter">
+    <wb-module deploy-name="Bankonter">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="proyectoBankonter"/>
-        <property name="java-output-path" value="/proyectoBankonter/build/classes"/>
+        <property name="context-root" value="Bankonter"/>
+        <property name="java-output-path" value="/Bankonter/build/classes"/>
     </wb-module>
 </project-modules>
