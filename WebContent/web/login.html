@@ -56,9 +56,9 @@
                         <label class="custom-control-label" for="customCheck">Recuérdame</label>
                       </div>
                     </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                    <button type="button" class="btn btn-primary btn-user btn-block" id="logar">
                       Entrar
-                    </a> 
+                    </button> 
                   </form>
                   <hr>
                   <div class="text-center">
@@ -79,6 +79,9 @@
 
   </div>
 
+ 
+
+
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -88,7 +91,24 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/jquery-utils.js"></script>
 
+
+  <script>
+    $(document).ready(function () {
+   
+       $("#logar").click(function(){
+        sendJsonRequest ("/Bankonter/AutenticarUsuario", 
+        '{"usuarioOMail":"rafa@rafa.com", "pass":"1234"}',
+        function (data, status) {
+          alert(data);
+        },
+        function (strError) {
+          alert("Error " + strError);
+        });
+       });
+    });
+  </script>
 </body>
 
 </html>

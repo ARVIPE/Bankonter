@@ -59,4 +59,10 @@ public class UsuarioControlador extends Controlador {
 		return resultado;
 	}
 	
+	
+	public static void main (String args[]) {
+		Usuario u = UsuarioControlador.getControlador().find(1);
+		System.out.println("Usuario: "  + u.getNombreUsuario());
+	}
+	
 }
