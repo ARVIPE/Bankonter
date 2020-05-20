@@ -58,4 +58,5 @@ public class Usuario extends Entidad implements Serializable {
 		this.password = password;
 	}
 
+
 }

@@ -1,33 +1,41 @@
 package model;
 
+import java.util.ArrayList;	
 import java.util.List;
 
-import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
-import javax.persistence.TypedQuery;
+import javax.persistence.Query;
+
+
+import model.Controlador;
+import model.Usuario;
+
+
+
+
 
 public class UsuarioControlador extends Controlador {
-	private  static UsuarioControlador controlador = null;
-	
 
+	private static UsuarioControlador controller = null;
+	
+	
+	
 	public UsuarioControlador() {
 		super(Usuario.class, "Bankonter");
-		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	/**
 	 * 
 	 * @return
 	 */
-	public static UsuarioControlador getControlador() {
-		if (controlador == null) {
-			controlador = new UsuarioControlador();
+	public static UsuarioControlador getControlador () {
+		if (controller == null) {
+			controller = new UsuarioControlador();
 		}
-		return controlador;
+		return controller;
 	}
-	
+
 	/**
 	 * 
 	 */
@@ -35,34 +43,49 @@ public class UsuarioControlador extends Controlador {
 		return (Usuario) super.find(id);
 	}
 
+
 	/**
 	 * 
+	 * @return
 	 */
-	public Usuario findFirst() {
-		try {
-			EntityManager em = getEntityManagerFactory().createEntityManager();
-			Query q = (Query) em.createQuery("SELECT u FROM Usuario u order by u.id", Usuario.class);
-			Usuario resultado = (Usuario) ((javax.persistence.Query) q).setMaxResults(1).getSingleResult();
-			em.close();
-			return resultado;
-			
-		} catch (NoResultException nrEx) {
-			return null;
-		}
-	}
-	
-	public List<Usuario> findAll () {
+	public List<Usuario> findAllUsuarios () {
+		List<Usuario> entities = new ArrayList<Usuario>();
 		EntityManager em = getEntityManagerFactory().createEntityManager();
-		Query q = (Query) em.createQuery("SELECT u FROM Usuario u", Usuario.class);
-		List<Usuario> resultado = (List<Usuario>) ((javax.persistence.Query) q).getResultList();
+		try {			
+			Query q = em.createNativeQuery("SELECT * FROM usuario", Usuario.class);
+			entities = (List<Usuario>) q.getResultList();
+		}
+		catch (NoResultException nrEx) {
+		}
 		em.close();
-		return resultado;
+		return entities;
 	}
 	
 	
-	public static void main (String args[]) {
-		Usuario u = UsuarioControlador.getControlador().find(1);
-		System.out.println("Usuario: "  + u.getNombreUsuario());
+	/**
+	 * 
+	 * @param userName
+	 * @param mail
+	 * @param password
+	 * @return
+	 */
+	public Usuario findByPasswordAndUsernameOrMail (String userName, String mail, String password) {
+		EntityManager em = getEntityManagerFactory().createEntityManager();
+		Usuario u = null;
+		try {
+			
+			Query q = em.createNativeQuery("SELECT * FROM usuario where (nombreUsuario = ? or email = ?) and password = ? limit 1;", Usuario.class);
+			q.setParameter(1, userName);
+			q.setParameter(2, mail);
+			q.setParameter(3, password);
+			u = (Usuario) q.getSingleResult();
+		}
+		catch (NoResultException nrEx) {
+		}
+		em.close();
+		return u;
 	}
+
 	
 }
+
