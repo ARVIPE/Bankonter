@@ -98,7 +98,7 @@
     $(document).ready(function () {
    
        $("#logar").click(function(){
-        sendJsonRequest ("/Bankonter/AutenticarUsuario", 
+        sendJsonRequest ("/Bankonter/LoginUsuario", 
         '{"usuarioOMail":"rafa@rafa.com", "pass":"1234"}',
         function (data, status) {
           alert(data);

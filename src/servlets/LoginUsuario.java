@@ -17,10 +17,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Servlet implementation class AutenticarUsuario
  */
-@WebServlet(description = "Comprobar usuario", urlPatterns = { "/servlets/LoginUsuario" })
+@WebServlet("/LoginUsuario")
 public class LoginUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	public LoginUsuario () {
+		super();
+	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
