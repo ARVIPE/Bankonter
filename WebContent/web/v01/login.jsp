@@ -3,9 +3,10 @@
 </jsp:include>
 
 <script>
-<!-- Haremos la función para enviar los datos del registro con una petición JSON -->
-<!-- COMPROBAR LA LINEA 27 CON LA DIRECCION DEL PORTAR A DONDE REDIRIGIMOS LA PETICIÓN EN CASO DE EXITO-->
-<!-- COMPROBAR EL BODY POR FAVOR -->
+<!-- Haremos la función para enviar los datos del registro con una petición JSON 
+COMPROBAR LA LINEA 27 CON LA DIRECCION DEL PORTAR A DONDE REDIRIGIMOS LA PETICIÓN EN CASO DE EXITO
+COMPROBAR EL BODY POR FAVOR-->
+
 
 $(document).ready(function(){
 	//Esta acción se realiza cuando el usuario pulse el botón '#btnEntrar'. El botón tiene un tiene inclido un type="button". 
