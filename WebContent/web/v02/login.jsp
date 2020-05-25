@@ -19,7 +19,7 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block" id="loginImage"></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
@@ -84,7 +84,10 @@
   <script>
     $(document).ready(function () {
     	
-    	
+    	var loginImages = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "camaleon2.jpg",  "11.jpg"  ]
+        $("#loginImage").css("background", "url('../img/" + loginImages[Math.floor(Math.random() * loginImages.length)] + "')");
+        $("#loginImage").css("background-position", "center");
+        $("#loginImage").css("background-size", "cover");
   
       // Acción a realizar cuando el usuario pulse el botón "#btnEntrar". Recordar que dicho botón tiene que incluir el type="button". Si no se pusiera
       // ese type el botón se comportaría por defecto como type="submit" y enviaría el formulario, cosa que no es lo que queremos.
