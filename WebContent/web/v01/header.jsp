@@ -17,26 +17,28 @@
     crossorigin="anonymous">
     <script srd="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     
-    <!-- Comprobar cuál es la dirección correcta -->
+    <!-- Comprobar cuï¿½l es la direcciï¿½n correcta -->
     <script src="../js/jquery-utils.js"></script>
     
-    <!-- La siguiente línea es importante para que en cada versión de Bankonter se llame a los servlets de la misma versión.
-    	Se está llamando a una función contenida dentro del fichero "../js/jquery-utils.js" y estableciendo un valor que, después,
-    	será utilizado por la función sendJSonRequest. 
-    	Este valor se debe cambiar en cada versión de Bankonter
+    <!-- La siguiente lï¿½nea es importante para que en cada versiï¿½n de Bankonter se llame a los servlets de la misma versiï¿½n.
+    	Se estï¿½ llamando a una funciï¿½n contenida dentro del fichero "../js/jquery-utils.js" y estableciendo un valor que, despuï¿½s,
+    	serï¿½ utilizado por la funciï¿½n sendJSonRequest. 
+    	Este valor se debe cambiar en cada versiï¿½n de Bankonter
      -->
      
      <!-- HAY QUE COMPROBAR LA RUTA CORRECTAR DE ESTE CONTEXPATH -->
     <script>
-    	setServletsPrefix("<%=request.getContextPath() + "/bankonter_01" %>");
+    	setServletsPrefix("<%=request.getContextPath() + "/Bakonter" %>");
     </script>
     
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" rel="stylesheet">
+
 
     <!-- Custom styles for this template-->
-    <link href="../css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
 	
 </head>
