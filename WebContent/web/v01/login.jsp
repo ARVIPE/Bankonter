@@ -19,23 +19,23 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block" id="loginImage"></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">¡Bienvenido!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                   </div>
                   <form class="user">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="usuOrEmail" aria-describedby="emailHelp" placeholder="Usuario o correo electrónico">
+                      <input type="email" class="form-control form-control-user" id="usuOrEmail" aria-describedby="emailHelp" placeholder="Usuario o correo electr&oacute;nico">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="pass" placeholder="Contraseña">
+                      <input type="password" class="form-control form-control-user" id="pass" placeholder="Contrase&ntilde;a">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Recuérdame</label>
+                        <label class="custom-control-label" for="customCheck">Recordarme</label>
                       </div>
                     </div>
                     <button type="button" class="btn btn-primary btn-user btn-block" id="btnEntrar">
@@ -45,10 +45,10 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">¿Has olvidado tu contraseña?</a>
+                    <a class="small" href="forgot-password.html">Has olvidado tu contrase&ntilde;a?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.html">¡Crea una cuenta!</a>
+                    <a class="small" href="register.html">Crea una cuenta!</a>
                   </div>
                 </div>
               </div>
@@ -83,6 +83,11 @@
   <!-- Script de Rafael para mandar peticiones json-->
   <script>
     $(document).ready(function () {
+    	
+    	var loginImages = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg"]
+        $("#loginImage").css("background", "url('../img/" + loginImages[Math.floor(Math.random() * loginImages.length)] + "')");
+        $("#loginImage").css("background-position", "center");
+        $("#loginImage").css("background-size", "cover");
   
       // Acción a realizar cuando el usuario pulse el botón "#btnEntrar". Recordar que dicho botón tiene que incluir el type="button". Si no se pusiera
       // ese type el botón se comportaría por defecto como type="submit" y enviaría el formulario, cosa que no es lo que queremos.
