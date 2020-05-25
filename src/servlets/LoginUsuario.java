@@ -45,7 +45,7 @@ public class LoginUsuario extends HttpServlet {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			JsonNode rootNode = mapper.readTree(request.getInputStream());
-		    userOrEmail = rootNode.path("usuarioOMail").asText();
+		    userOrEmail = rootNode.path("usuOrEmail").asText();
 			password = rootNode.path("pass").asText();
 			
 			// Busco al usuario en la BBDD
