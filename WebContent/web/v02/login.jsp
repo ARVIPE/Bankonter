@@ -6,13 +6,13 @@
 <body class="bg-gradient-success">
 
 
-  <div class="container">
+  <div class="container col-sm">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
       <div class="col-xl-10 col-lg-12 col-md-9">
-        <div class="d-flex p-2 sidebar-brand-text" id ="txtIngIndirect">
+        <div class="d-flex p-2 sidebar-brand-text col-lg-12 col-md-9" id ="txtIngIndirect">
           <div class="rotate-n-15 icon"><i class="fas fa-kiwi-bird "></div></i> &nbsp;ING INDIRECT </div>
 
         <div class="card o-hidden border-0 shadow-lg my-5" id="login-container" >         
