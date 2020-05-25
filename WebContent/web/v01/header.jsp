@@ -28,7 +28,7 @@
      
      <!-- HAY QUE COMPROBAR LA RUTA CORRECTAR DE ESTE CONTEXPATH -->
     <script>
-    	setServletsPrefix("<%=request.getContextPath() + "/Bakonter" %>");
+    	setServletsPrefix("<%=request.getContextPath() %>");
     </script>
     
     <!-- Custom fonts for this template-->
@@ -38,7 +38,7 @@
 
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.css" rel="stylesheet">
 	
 </head>
