@@ -12,8 +12,8 @@
     <div class="row justify-content-center">
 
       <div class="col-xl-10 col-lg-12 col-md-9">
-        <div class="d-flex p-2 sidebar-brand-text col-lg-12 col-md-9" id ="txtIngIndirect">
-          <div class="rotate-n-15 icon"><i class="fas fa-kiwi-bird "></div></i> &nbsp;ING INDIRECT </div>
+        <div class="col-xl-10 col-lg-12 col-md-9 mt-5 text-white text-center" id ="txtIngIndirect">
+          <h1 class="display-2"><i class="fas fa-kiwi-bird "></i> &nbsp;ING INDIRECT </h1></div>
 
         <div class="card o-hidden border-0 shadow-lg my-5" id="login-container" >         
           <div class="card-body p-0">
