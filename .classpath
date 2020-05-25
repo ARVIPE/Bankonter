@@ -32,5 +32,6 @@
 			<attribute name="javadoc_location" value="https://javaee.github.io/javaee-spec/javadocs/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/MySQL JDBC Bankonter"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
