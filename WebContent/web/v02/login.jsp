@@ -6,14 +6,14 @@
 <body class="bg-gradient-success">
 
 
-  <div class="container col-sm">
+  <div class="container py-3">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
-        <div class="col-xl-10 col-lg-12 col-md-9 mt-5 text-white text-center" id ="txtIngIndirect">
-          <h1 class="display-2"><i class="fas fa-kiwi-bird "></i> &nbsp;ING INDIRECT </h1></div>
+      
+        <div class="col-xl-10 col-lg-12 col-md-9 mt-5 text-white text-center" >
+          <h1 class="display-2"><i class="fas fa-kiwi-bird "></i> &nbsp;ING INDIRECT</h1>
 
         <div class="card o-hidden border-0 shadow-lg my-5" id="login-container" >         
           <div class="card-body p-0">
@@ -31,13 +31,7 @@
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="pass" placeholder="Contrase&ntilde;a">
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Recordarme</label>
-                      </div>
-                    </div>
+                    </div>                    
                     <button type="button" class="btn btn-primary btn-user btn-block" id="btnEntrar">
                       <span id="spinner"></span>
                       Entrar
@@ -60,6 +54,7 @@
 
     </div>
 
+  
   </div>
 
  
