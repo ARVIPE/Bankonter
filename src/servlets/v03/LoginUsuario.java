@@ -1,4 +1,4 @@
-package servlets.v02;
+package servlets.v03;
 
 import Utils.SuperTipoServlet;
 
@@ -28,6 +28,8 @@ public class LoginUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
 	private static final Logger logger = LogManager.getLogger(LoginUsuario.class);
+	public static String ID_USER_SESSION = "USR";
+	
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -66,8 +68,13 @@ public class LoginUsuario extends HttpServlet {
 			}
 			// Si encuentro al usuario establezco su imagen a null, porque en este caso no quiero que dicha imagen viaje en el JSON de salida
 			else {
-				//u.setImagen(null);
+				//Cuando un usruario se logea de forma correcta, guardamos ese objeto, que representa a ese usuraio en la sesión http.
+				// De esta manera siempre que exista, podrá recuperarlo y sirve de bandera indicando que el usuario na iniciado de forma correcta la sesión
 				
+				request.getSession().setMaxInactiveInterval(120); // esto establece un tiempo, en segundos, por defecto de vida de la sesión, por defecto tiene 30 minutos
+				request.getSession().setAttribute(ID_USER_SESSION, u); // A partir de este momento en la sesiónn está guardado el usuario
+				
+				logger.info("El usuario " + userOrEmail + " ha iniciado sesiÃ³n");  //Log
 				dto.put("userName", u.getNombreUsuario()); // le damos valores al dto con el JSON de respuesta del Servlet
 			}
 			
@@ -75,7 +82,7 @@ public class LoginUsuario extends HttpServlet {
 		catch (Exception ex){
 			//Ocurrio una excepciÃ³n en el acceso a datos o un error que no nos impide acceder a los campos del JSON
 			//ex.printStackTrace();
-			logger.error("Error al buscar al usuario o email: '" + userOrEmail + "'  con password: " + password, ex + "'");
+			logger.error("Error al buscar al usuario o email: '" + userOrEmail + "'  con password: " + password + "'", ex);
 		}
 		
 		
