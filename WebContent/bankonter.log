@@ -1,0 +1,13 @@
+2020-05-20 13:25:29,530 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-5] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:26:51,220 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-8] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:26:52,819 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-9] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:26:53,358 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-10] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:26:53,923 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-1] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:26:54,534 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-2] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:53:32,903 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-5] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:54:52,803 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-10] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:55:17,104 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-3] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 13:55:33,591 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-4] No se puede localizar al usuario 'rafa@rafa.com' con password '123'
+2020-05-20 14:06:20,941 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-9] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 17:00:29,513 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-6] No se puede localizar al usuario 'rafa@rafa.com' con password ''
+2020-05-20 17:10:25,620 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-4] El usuario rafa@rafa.com ha iniciado sesión
