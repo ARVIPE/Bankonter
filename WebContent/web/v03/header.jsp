@@ -28,7 +28,7 @@
      
      <!-- HAY QUE COMPROBAR LA RUTA CORRECTAR DE ESTE CONTEXPATH -->
     <script>
-    	setServletsPrefix("<%=request.getContextPath() + "/v02" %>");
+    	setServletsPrefix("<%=request.getContextPath() + "/v03" %>");
     </script>
     
     <!-- Custom fonts for this template-->
