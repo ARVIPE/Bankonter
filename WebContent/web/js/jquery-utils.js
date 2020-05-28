@@ -52,8 +52,13 @@ function setServletsPrefix (newServletsPrefix) {
  * @param {*} successFunction 
  * @param {*} errorFunction 
  */
-function sendJsonRequest(url, jsonSendingData, successFunction, errorFunction) {
-    url = servletsPrefix + url;
+function sendJsonRequest(url, jsonSendingData, successFunction, errorFunction, elementToShowWaitingIcon) {
+	 // Agrego a la url el prefijo necesario para acceder a la versión concreta de la aplicación
+	url = servletsPrefix + url;
+	 // Si se ha especificado un elemento en el que mostrar un icono de carga, se hace
+    if (elementToShowWaitingIcon != null) {
+        insertWaitingIcon(elementToShowWaitingIcon);
+    }
     $.ajax(url, {
         data: jsonSendingData,
         contentType: 'application/json',
@@ -61,6 +66,10 @@ function sendJsonRequest(url, jsonSendingData, successFunction, errorFunction) {
         dataType: 'json',
         success: function (data, status) {
             successFunction(data, status);
+         // si hay un elemento en el que detener la animación de carga, se detiene
+            if (elementToShowWaitingIcon != null) {
+                removeWaitingIcon(elementToShowWaitingIcon);
+            }
         },
         error: function (xhr, strError, exception) {
             if (errorFunction != null) {
@@ -76,6 +85,10 @@ function sendJsonRequest(url, jsonSendingData, successFunction, errorFunction) {
 
                 // Envío el error a la función definida por el usuario
                 errorFunction(resumenError);
+            }
+            // si hay un elemento en el que detener la animación de carga, se detiene
+            if (elementToShowWaitingIcon != null) {
+                removeWaitingIcon(elementToShowWaitingIcon);
             }
         }
     });
@@ -183,6 +196,13 @@ $(document).ready(function () {
     $(".checkValidity").blur(function () {
         checkInputFormValidity ($(this)); // Comprobamos la validez del elemento
     })
+    
+ // Lo siguiente es para conseguir que los elementos que tengan clase "bankonterNavBarLink" carguen páginas
+    // en el interior del div "page-content", que es el principal de la página "portal.jsp"
+    $(".bankonterNavBarLink").css("cursor", "pointer");
+    $(".bankonterNavBarLink").click(function() {
+        $("#pageContent").load($(this).attr("toLoadInPageContent"));
+    });
 });
 
 // Expresiones regulares que podremos utilizar en cualquier momento
@@ -230,4 +250,12 @@ function checkFormValidity (form) {
         }
     });
     return formIsValid;
+}
+
+/**
+ * Formatea el número recibido a un número decimal de tipo moneda
+ * @param {} anyNumber 
+ */
+function formatNumberToCurrency (anyNumber) {
+    return parseFloat(anyNumber).toLocaleString('en-US', {minimumFractionDigits: 2})
 }

@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Servlet implementation class AutenticarUsuario
  */
-@WebServlet("/LoginUsuario")
+@WebServlet("/v02/LoginUsuario")
 public class LoginUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
