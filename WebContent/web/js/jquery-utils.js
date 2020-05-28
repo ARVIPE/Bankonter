@@ -231,3 +231,4 @@ function checkFormValidity (form) {
     });
     return formIsValid;
 }
+
