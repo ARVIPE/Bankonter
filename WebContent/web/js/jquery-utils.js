@@ -218,6 +218,9 @@ function checkInputFormValidity (inputFormElement) {
         inputFormElement.addClass("is-valid");
         return true;
     }
+    
+    
+    
 }
 
 /**
