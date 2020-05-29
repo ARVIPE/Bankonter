@@ -24,7 +24,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Servlet implementation class AutenticarUsuario
  */
-@WebServlet("/v03/LoginUsuario")
+//@WebServlet("/v03/LoginUsuario")
 public class LoginUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
@@ -36,9 +36,9 @@ public class LoginUsuario extends HttpServlet {
 	 */
 	public LoginUsuario () {
 		super();
-	}
-	
-
+	}  
+	  
+  
 	/**
 	 * Obtengo un JSON tipo  
 	 *    {"usuOrEmail": xxxxx, "pass": xxxxx}
