@@ -25,7 +25,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
                   </div>
-                  <form class="user">
+                  <form id="formLogin">
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user checkValidity" id="usuOrEmail" aria-describedby="emailHelp"
                        placeholder="Usuario o correo electr&oacute;nico" validity="email">
