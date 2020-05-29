@@ -26,7 +26,7 @@
     	Este valor se debe cambiar en cada versi�n de Bankonter
      -->
     <script>
-    	setServletsPrefix("<%=request.getContextPath() + "/bankonter_05" %>");
+    	setServletsPrefix("<%=request.getContextPath() %>");
     </script>
 
     <!-- Custom fonts for this template-->
