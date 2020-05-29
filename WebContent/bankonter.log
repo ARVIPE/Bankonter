@@ -11,3 +11,5 @@
 2020-05-20 14:06:20,941 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-9] No se puede localizar al usuario 'rafa@rafa.com' con password ''
 2020-05-20 17:00:29,513 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-6] No se puede localizar al usuario 'rafa@rafa.com' con password ''
 2020-05-20 17:10:25,620 INFO t.c.v.v.AutenticarUsuario [http-nio-8080-exec-4] El usuario rafa@rafa.com ha iniciado sesi�n
+2020-05-29 20:21:13,729 INFO s.v.LoginUsuario [http-nio-8080-exec-7] El usuario rafa ha iniciado sesión
+2020-05-29 20:26:23,373 INFO s.v.LoginUsuario [http-nio-8080-exec-5] El usuario rafa ha iniciado sesión

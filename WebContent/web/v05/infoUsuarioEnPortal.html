@@ -9,15 +9,15 @@
                       $("#nombreUsuario").html((data.userName != null)? data.userName : ".....");
                       // Si obtengo los datos de la miniatura del usuario, la pongo en pantalla, si no cargo una imagen genérica
                       if (data.imagen != null && data.imagen.miniatura != null) {
-                        $("#miniaturaImagenUsuario").attr("src", "data:image/png;base64," + data.image);
+                        $("#miniaturaImagenUsuario").attr("src", "data:img/png;base64," + data.image);
                       }
                       else {
-                        $("#miniaturaImagenUsuario").attr("src", "../images/homer.png");
+                        $("#miniaturaImagenUsuario").attr("src", "../img/homer.png");
                       }
                     }
                   }, 
                   function (resumenError) {  // Función que se ejecutará si la petición web sale mal
-                    $("#miniaturaImagenUsuario").attr("src", "../images/homer.png"); // Cargo en pantalla una imagen genérica
+                    $("#miniaturaImagenUsuario").attr("src", "../img/homer.png"); // Cargo en pantalla una imagen genérica
                   },
                   $("#miniaturaImagenUsuario")); // Elemento en el que deseo introducir una imagen de carga                 
                 });
