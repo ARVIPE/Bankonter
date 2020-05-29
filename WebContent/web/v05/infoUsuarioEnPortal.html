@@ -9,7 +9,7 @@
                       $("#nombreUsuario").html((data.userName != null)? data.userName : ".....");
                       // Si obtengo los datos de la miniatura del usuario, la pongo en pantalla, si no cargo una imagen genérica
                       if (data.imagen != null && data.imagen.miniatura != null) {
-                        $("#miniaturaImagenUsuario").attr("src", "data:img/png;base64," + data.image);
+                        $("#miniaturaImagenUsuario").attr("src", "data:image/png;base64," + data.imagen);
                       }
                       else {
                         $("#miniaturaImagenUsuario").attr("src", "../img/homer.png");
