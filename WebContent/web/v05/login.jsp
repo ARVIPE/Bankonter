@@ -109,7 +109,7 @@
                     pass: $("#pass").val() };
   
         // Envío la petición JSON
-        sendJsonRequest("/LoginUsuario", // URL a la que envío la petición
+        sendJsonRequest("/v04/LoginUsuario", // URL a la que envío la petición
           JSON.stringify(obj),  // Datos JSON que envío al Servlet
           function (data, status) {  // Función que se ejecutará cuando la petición se realice con éxito
             if (data == null) { // Si el servicio devuelve "null" significa que no se ha encontrado un usuario como el que se quiere autenticar
