@@ -116,7 +116,7 @@
               showAlertMessage($("#login-container"), ALERT_DANGER, "Error", "El usuario y/o contrase&ntilde;a introducidos no son v&aacute;lidos");
             }
             else { // Autenticación correcta, redirigimos al portal de la aplicación.
-              window.location.href = "../index.html";
+              window.location.href = "portal.jsp";
             }
             removeWaitingIcon($("#spinner"));  // Detengo la animación de "Waiting"
           }, 
