@@ -12,7 +12,15 @@
 		<servlet-name>LoginUsuarioV03</servlet-name>
 		<url-pattern>/v03/LoginUsuario</url-pattern>
 	</servlet-mapping>
-
+	
+	   	<servlet>
+		<servlet-name>LoginUsuarioV04</servlet-name>
+		<servlet-class>servlets.v04.LoginUsuario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginUsuarioV04</servlet-name>
+		<url-pattern>/v04/LoginUsuario</url-pattern>
+	</servlet-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
