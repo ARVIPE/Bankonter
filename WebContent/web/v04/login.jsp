@@ -1,4 +1,4 @@
-A<jsp:include page="header.jsp" flush="true">
+<jsp:include page="header.jsp" flush="true">
 	<jsp:param name="tituloDePagina" value="Login" />
 </jsp:include>
 
@@ -27,8 +27,7 @@ A<jsp:include page="header.jsp" flush="true">
                   </div>
                   <form id="formLogin">
                     <div class="form-group">
-                    <!-- Con el checkValidity establecemos la validación del formulario desde el input  -->
-                      <input type="text" class="form-control form-control-user checkValidity" id="usuOrEmail" aria-describedby="emailHelp"
+                      <input type="email" class="form-control form-control-user checkValidity" id="usuOrEmail" aria-describedby="emailHelp"
                        placeholder="Usuario o correo electr&oacute;nico" validity="email">
                        <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Debes introducir un email v&aacute;lido antes de intentar entrar</div>                                      
