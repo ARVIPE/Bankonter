@@ -3,6 +3,7 @@ package servlets.v04;
 import Utils.SuperTipoServlet;
 
 
+
 import model.Usuario;
 import model.UsuarioControlador;
 
@@ -24,7 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Servlet implementation class AutenticarUsuario
  */
-@WebServlet("/v04/LoginUsuario")
+//@WebServlet("/v04/LoginUsuario")
 public class LoginUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
