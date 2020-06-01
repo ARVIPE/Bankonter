@@ -77,6 +77,13 @@ CREATE TABLE `usuario` (
   `password` varchar(45) DEFAULT NULL,
   `email` varchar(200) DEFAULT NULL,
   `idImagen` int DEFAULT NULL,
+  `nombreComp` varchar(45) DEFAULT NULL,
+  `apellidos` varchar(45) DEFAULT NULL,
+  `dniNie` varchar(45) DEFAULT NULL,
+  `fechaNac` datetime DEFAULT NULL,
+  `telefono` varchar(45) DEFAULT NULL,
+  `direccion` varchar(100) DEFAULT NULL,
+  `localidad` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_usuario_imagen` (`idImagen`),
   CONSTRAINT `fk_usuario_imagen` FOREIGN KEY (`idImagen`) REFERENCES `imagen` (`id`)
@@ -89,7 +96,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'rafa','1234','rafa@rafa.com',NULL);
+INSERT INTO `usuario` VALUES (1,'rafa','1234','rafa@rafa.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-21 12:34:38
+-- Dump completed on 2020-06-01 12:33:59
