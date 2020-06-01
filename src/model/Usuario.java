@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -15,6 +16,7 @@ public class Usuario extends Entidad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
 	private String apellidos;
@@ -39,9 +41,13 @@ public class Usuario extends Entidad implements Serializable {
 	private String telefono;
 
 	//bi-directional many-to-one association to Imagen
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="idImagen")
 	private Imagen imagen;
+
+	//bi-directional many-to-one association to Contrato
+	@OneToMany(mappedBy="usuario")
+	private List<Contrato> contratos;
 
 	public Usuario() {
 	}
@@ -140,6 +146,28 @@ public class Usuario extends Entidad implements Serializable {
 
 	public void setImagen(Imagen imagen) {
 		this.imagen = imagen;
+	}
+
+	public List<Contrato> getContratos() {
+		return this.contratos;
+	}
+
+	public void setContratos(List<Contrato> contratos) {
+		this.contratos = contratos;
+	}
+
+	public Contrato addContrato(Contrato contrato) {
+		getContratos().add(contrato);
+		contrato.setUsuario(this);
+
+		return contrato;
+	}
+
+	public Contrato removeContrato(Contrato contrato) {
+		getContratos().remove(contrato);
+		contrato.setUsuario(null);
+
+		return contrato;
 	}
 
 }

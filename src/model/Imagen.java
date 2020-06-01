@@ -17,11 +17,9 @@ public class Imagen implements Serializable {
 	@Id
 	private int id;
 
-	@Lob
-	private byte[] contenido;
+	private Object contenido;
 
-	@Lob
-	private byte[] miniatura;
+	private Object miniatura;
 
 	//bi-directional many-to-one association to Usuario
 	@OneToMany(mappedBy="imagen")
@@ -38,19 +36,19 @@ public class Imagen implements Serializable {
 		this.id = id;
 	}
 
-	public byte[] getContenido() {
+	public Object getContenido() {
 		return this.contenido;
 	}
 
-	public void setContenido(byte[] contenido) {
+	public void setContenido(Object contenido) {
 		this.contenido = contenido;
 	}
 
-	public byte[] getMiniatura() {
+	public Object getMiniatura() {
 		return this.miniatura;
 	}
 
-	public void setMiniatura(byte[] miniatura) {
+	public void setMiniatura(Object miniatura) {
 		this.miniatura = miniatura;
 	}
 
