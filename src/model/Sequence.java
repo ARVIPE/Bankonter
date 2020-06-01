@@ -14,12 +14,12 @@ public class Sequence implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="SEQ_COUNT")
 	private int seqCount;
 
 	@Column(name="SEQ_NAME")
 	private String seqName;
+
 
 	public Sequence() {
 	}
@@ -32,6 +32,9 @@ public class Sequence implements Serializable {
 		this.seqCount = seqCount;
 	}
 
+
+
+
 	public String getSeqName() {
 		return this.seqName;
 	}
@@ -39,5 +42,7 @@ public class Sequence implements Serializable {
 	public void setSeqName(String seqName) {
 		this.seqName = seqName;
 	}
+
+
 
 }

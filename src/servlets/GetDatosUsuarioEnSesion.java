@@ -21,9 +21,9 @@ import model.Usuario;
 
 
 /**
- * Comprueba que exista un usuario en la sesi√≥n de trabajo, una vez que lo obtiene devolver√° la informaci√≥n
+ * Comprueba que exista un usuario en la sesionn de trabajo, una vez que lo obtiene devuelve la informaciÛn
  * de este usuario, incorporando la imagen del mismo.
- * En caso de que se desee obtener una miniatura de la imagen, se recibir√° un JSON del tipo
+ * En caso de que se desee obtener una miniatura de la imagen, se recibir· un JSON del tipo
  *    {"miniatura":true}
  * En caso de que no se reciba el json, o que este tenga el valor "false", se devolver√° la imagen normal, no
  * la miniatura.
@@ -80,7 +80,7 @@ public class GetDatosUsuarioEnSesion extends SuperTipoServlet {
 			logger.error("Error al localizar los datos del usuario en sesiÛn.", ex);
 		}
 
-		response.setContentType("application/json;charset=UTF-8");	// Codificaci√≥n UTF-8 de los datos JSON que devuelve el Servlet
+		response.setContentType("application/json;charset=UTF-8");	// CodificaciÛn UTF-8 de los datos JSON que devuelve el Servlet
 		// Creo el JSON de salida y lo devuelvo al cliente
 		response.getWriter().println(mapper.writeValueAsString(dto));
 		
