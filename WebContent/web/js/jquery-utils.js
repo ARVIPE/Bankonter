@@ -1,6 +1,13 @@
 
 // Siempre que la página esté completamente cargada se aplica lo siguiente
 $(document).ready(function () {
+    reInit();
+});
+
+
+// He sacado esta función fuera de $(document).ready() para poder volver a iniciar la página en cualquier
+// momento, dado que hago cargas parciales de código html dentro de la página del portal.
+function reInit () {
     /**
      * Cuando la página esté completamente cargada le asignamos las propiedades al div que actúa
      * como ventana modal de carga
@@ -11,8 +18,20 @@ $(document).ready(function () {
         show: false  // Por defecto aparece oculto en la página
     })
     
+    // Todos los elmentos de un formulario que incorporen la clase "checkValidity" tendrán el comportamiento
+    // de comprobar su validez cuando pierdan el foco.
+    // Usado para comprobar la validez de un input que tenga la clase "checkValidity"
+    $(".checkValidity:input").blur(function () {
+        checkInputFormValidity ($(this)); // Comprobamos la validez del elemento
+    })
 
-});
+    // Lo siguiente es para conseguir que los elementos que tengan clase "bankonterNavBarLink" carguen páginas
+    // en el interior del div "page-content", que es el principal de la página "portal.jsp"
+    $(".bankonterNavBarLink").css("cursor", "pointer");
+    $(".bankonterNavBarLink").click(function() {
+        $("#pageContent").load($(this).attr("toLoadInPageContent"));
+    });
+}
 
 
 /**
@@ -52,7 +71,7 @@ function setServletsPrefix (newServletsPrefix) {
  * @param {*} successFunction 
  * @param {*} errorFunction 
  */
-function sendJsonRequest(url, jsonSendingData, successFunction, errorFunction) {
+function sendJsonRequest(url, jsonSendingData, successFunction, errorFunction, elementToShowWaitingIcon) {
     url = servletsPrefix + url;
     $.ajax(url, {
         data: jsonSendingData,
@@ -61,6 +80,10 @@ function sendJsonRequest(url, jsonSendingData, successFunction, errorFunction) {
         dataType: 'json',
         success: function (data, status) {
             successFunction(data, status);
+            // si hay un elemento en el que detener la animación de carga, se detiene
+            if (elementToShowWaitingIcon != null) {
+                removeWaitingIcon(elementToShowWaitingIcon);
+            }
         },
         error: function (xhr, strError, exception) {
             if (errorFunction != null) {
@@ -76,6 +99,10 @@ function sendJsonRequest(url, jsonSendingData, successFunction, errorFunction) {
 
                 // Envío el error a la función definida por el usuario
                 errorFunction(resumenError);
+            }
+            // si hay un elemento en el que detener la animación de carga, se detiene
+            if (elementToShowWaitingIcon != null) {
+                removeWaitingIcon(elementToShowWaitingIcon);
             }
         }
     });
@@ -175,16 +202,6 @@ function getDataFromFileInput(fileInput, onFileLoadedFunction) {
 
 
 
-
-
-// Todos los elmentos de un formulario que incorporen la clase "checkValidity" tendrán el comportamiento
-// de comprobar su validez cuando pierdan el foco.
-$(document).ready(function () {
-    $(".checkValidity").blur(function () {
-        checkInputFormValidity ($(this)); // Comprobamos la validez del elemento
-    })
-});
-
 // Expresiones regulares que podremos utilizar en cualquier momento
 const EMAIL_REGULAR_EXPRESION = /\S+@\S+\.\S+/; // Expresión regular para un email -  validity="email"
 const NO_EMPTY_REGULAR_EXPRESION = /.+/;        // Expresión regular para cadena no vacía -  validity="noEmpty" o validity=""
@@ -210,12 +227,10 @@ function checkInputFormValidity (inputFormElement) {
     var regularExpression = getRegularExpressionValidityFromElement($(inputFormElement));
     if (!regularExpression.test(inputFormElement.val())) { // Compruebo la validación 
         inputFormElement.addClass("is-invalid"); // Incluir esta clase provaca un efecto visual en el elemento del formulario
-        inputFormElement.removeClass("is-valid");
         return false;
     }
     else {
         inputFormElement.removeClass("is-invalid");
-        inputFormElement.addClass("is-valid");
         return true;
     }
     
@@ -235,5 +250,13 @@ function checkFormValidity (form) {
         }
     });
     return formIsValid;
+}
+
+/**
+ * Formatea el número recibido a un número decimal de tipo moneda
+ * @param {} anyNumber 
+ */
+function formatNumberToCurrency (anyNumber) {
+    return parseFloat(anyNumber).toLocaleString('en-US', {minimumFractionDigits: 2})
 }
 

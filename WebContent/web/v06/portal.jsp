@@ -13,7 +13,7 @@
   $(document).ready(function() {
     // Realizo la carga de las diferentes partes de la p√°gina del portal
     $("#datosUsuarioEnSesion").load("infoUsuarioEnPortal.html"); // Cargo la esquina superior izquierda, con los datos del usuario y su foto
-    $("#pageContent").load("situacionGlobal.html"); // Cargo la situaci√≥n global, un resumen de cuentas, pr√©stamos y tarjetas, de momento est√°tico
+    $("#pageContent").load("situacionGlobal.html"); // Cargo la situaciÛn global, un resumen de cuentas, prÈstamos y tarjetas, de momento est·tico
 })
 
 </script>

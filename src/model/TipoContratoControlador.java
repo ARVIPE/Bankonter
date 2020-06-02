@@ -16,9 +16,13 @@ public class TipoContratoControlador extends Controlador {
 	
 	// Definimos constantes asociadas a los tipos de contratos
 	public static Tipocontrato CUENTA_CORRIENTE = getControlador().find(1);
+	public static Tipocontrato TARJETA_DEBITO = getControlador().find(2);
+	public static Tipocontrato TARJETA_CREDITO = getControlador().find(3);
+	public static Tipocontrato PRESTAMO = getControlador().find(4);
+	
 
 	public TipoContratoControlador() {
-		super(Contrato.class, "Bankonter");
+		super(Tipocontrato.class, "Bankonter");
 	}
 
 	/**

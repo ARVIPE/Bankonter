@@ -98,24 +98,21 @@
           if (!checkFormValidity($("#formLogin"))) { // Compruebo la validaci√≥n con una funci√≥n que podemos encontrar en el fichero jquery-utils.js
             showAlertMessage($("#login-container"), ALERT_DANGER, "Datos no v&aacute;lidos", "Has introducido al menos un dato no v&aacute;lido"); // Muestro una alerta
           }
-          else { // En este caso hemos comprobado que el formulario es v√°lido, llamamos al servidor
-            insertWaitingIcon($("#spinner")); // Hago que un componente incorpore el s√≠mbolo de carga
-           
-        
-        insertWaitingIcon($("#spinner")); // Hago que un componente incorpore el s√≠mbolo de carga
+          else { // En este caso hemos comprobado que el formulario es v·lido, llamamos al servidor
+            insertWaitingIcon($("#spinner")); // Hago que un componente incorpore el sÌmbolo de carga
         
         // Construyo un objeto con los datos del formulario introducidos por el usuario
         var obj = { usuOrEmail: $("#usuOrEmail").val(), 
                     pass: $("#pass").val() };
   
-        // Env√≠o la petici√≥n JSON
-        sendJsonRequest("/v04/LoginUsuario", // URL a la que env√≠o la petici√≥n
-          JSON.stringify(obj),  // Datos JSON que env√≠o al Servlet
-          function (data, status) {  // Funci√≥n que se ejecutar√° cuando la petici√≥n se realice con √©xito
+        // EnvÌo la peticiÛn JSON
+        sendJsonRequest("/v04/LoginUsuario", // URL a la que envÌo la peticiÛn
+          JSON.stringify(obj),  // Datos JSON que envÌo al Servlet
+          function (data, status) {  // FunciÛn que se ejecutar· cuando la peticiÛn se realice con Èxito
             if (data == null) { // Si el servicio devuelve "null" significa que no se ha encontrado un usuario como el que se quiere autenticar
-              showAlertMessage($("#login-container"), ALERT_DANGER, "Error", "El usuario y/o contrase&ntilde;a introducidos no son v&aacute;lidos");
+              showAlertMessage($("#login-container"), ALERT_DANGER, "Error", "El usuario y/o contraseÒa introducidos no son v·lidos");
             }
-            else { // Autenticaci√≥n correcta, redirigimos al portal de la aplicaci√≥n.
+            else { // AutenticaciÛn correcta, redirigimos al portal de la aplicaciÛn.
               window.location.href = "portal.jsp";
             }
             removeWaitingIcon($("#spinner"));  // Detengo la animaci√≥n de "Waiting"
