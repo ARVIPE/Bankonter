@@ -16,6 +16,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import Utils.SuperTipoServlet;
 import model.Contrato;
 import model.TipoContratoControlador;
 import model.Tipocontrato;
@@ -26,7 +27,7 @@ import model.UsuarioControlador;
  * Servlet implementation class situacionGlobalUsuario
  */
 @WebServlet("/situacionGlobalUsuario")
-public class GetSituacionGlobalUsuario extends HttpServlet {
+public class GetSituacionGlobalUsuario extends SuperTipoServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = LogManager.getLogger(GetSituacionGlobalUsuario.class);
        
@@ -74,8 +75,11 @@ public class GetSituacionGlobalUsuario extends HttpServlet {
 					hm.put("descriptor", c.getDescriptor());
 					hm.put("balance", c.getSaldo());
 					
-					if (c.getTipocontrato().getId() == TipoContratoControlador.CUENTA_CORRIENTE.getId()) cuentasCorrientes.add(hm);
+					if (c.getTipocontrato().getId() == TipoContratoControlador.CUENTA_CORRIENTE.getId()) {
+						cuentasCorrientes.add(hm);
+					} 
 					else if (c.getTipocontrato().getId() == TipoContratoControlador.TARJETA_DEBITO.getId()) {
+						hm.put("limite", c.getLimite());
 						tarjetasDebito.add(hm);
 					}
 					else if (c.getTipocontrato().getId() == TipoContratoControlador.TARJETA_CREDITO.getId()) {

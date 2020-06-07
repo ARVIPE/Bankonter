@@ -24,8 +24,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Servlet implementation class AutenticarUsuario
  */
-@WebServlet("/v04/LoginUsuario")
-public class LoginUsuario extends HttpServlet {
+//@WebServlet("/v04/LoginUsuario")
+public class LoginUsuario extends SuperTipoServlet {
 	private static final long serialVersionUID = 1L;
      
 	private static final Logger logger = LogManager.getLogger(LoginUsuario.class);
