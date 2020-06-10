@@ -1,11 +1,11 @@
           
- <!-- Voy a obtener de los contratos (cuentas, tarjetas y préstamos) del usuario guardado en la sesión valíendonos del Servlet GetSituacionGlobalUsuario  -->
+ <!-- Voy a obtener de los contratos (cuentas, tarjetas y prï¿½stamos) del usuario guardado en la sesiï¿½n valï¿½endonos del Servlet GetSituacionGlobalUsuario  -->
 <script>
   $(document).ready(function() {
-    // Se envía la petición JSON
-    sendJsonRequest("/GetSituacionGlobalUsuario", // URL a la que enviar la petición
-    '',  // Datos JSON que envío al Servlet
-    function (data, status) {  // Función que se ejecutará cuando la petición se realice con éxito
+    // Se envï¿½a la peticiï¿½n JSON
+    sendJsonRequest("/GetSituacionGlobalUsuario", // URL a la que enviar la peticiï¿½n
+    '',  // Datos JSON que envï¿½o al Servlet
+    function (data, status) {  // Funciï¿½n que se ejecutarï¿½ cuando la peticiï¿½n se realice con ï¿½xito
       if (data != null) { // Si el servicio devuelve "null" significa que no se ha encontrado un usuario como el que se quiere autenticar
       
         // Paso por cada una de las cuentas corrientes, creando su bootstrap card y calculando el total de la suma de sus saldos
@@ -13,9 +13,9 @@
         var divCuentasCorrientes = $("#divCuentasCorrientes");
         divCuentasCorrientes.html(""); // Formateo el hueco de las cuentas corrientes
         $.each(data.accounts, function (i, item)  {
-          totalCuentasCorrientes += item.balance; // Calculo el saldo total sumado de todas las cuentas   
+          totalCuentasCorrientes += item.saldo; // Calculo el saldo total sumado de todas las cuentas   
           // Incorporo al div correspondiente una bootstrap card por cada item       
-          divCuentasCorrientes.append(createBootstrapCardFromItem(item, "border-left-primary", formatNumberToCurrency(item.balance) + " &euro;", "fas fa-money-check-alt"));         
+          divCuentasCorrientes.append(createBootstrapCardFromItem(item, "border-left-primary", formatNumberToCurrency(item.saldo) + " &euro;", "fas fa-money-check-alt"));         
         });
         // Una vez calculado el total de las cuentas corrientes, se muestra
         $("#spanTotalCuentasCorrientes").html(formatNumberToCurrency(totalCuentasCorrientes));
@@ -25,16 +25,16 @@
         var divTarjetas = $("#divTarjetas");
         divTarjetas.html(""); // Formateo el hueco de las tarjetas
         $.each(data.debitCards, function (i, item)  {
-          totalTarjetas += item.balance; // Calculo el saldo total sumado de todas las cuentas   
+          totalTarjetas += item.saldo; // Calculo el saldo total sumado de todas las cuentas   
             // Incorporo al div correspondiente una bootstrap card por cada item       
-            divTarjetas.append(createBootstrapCardFromItem(item, "border-left-success", formatNumberToCurrency(item.balance) + " &euro;", "fab fa-cc-visa "));         
+            divTarjetas.append(createBootstrapCardFromItem(item, "border-left-success", formatNumberToCurrency(item.saldo) + " &euro;", "fab fa-cc-visa "));         
         });
 
         // Repito las operaciones anteriores para las tarjetas de crÃ©dito
         $.each(data.creditCards, function (i, item)  {
-          totalTarjetas += item.balance; // Calculo el saldo total sumado de todas las cuentas   
+          totalTarjetas += item.saldo; // Calculo el saldo total sumado de todas las cuentas   
           // Incorporo al div correspondiente una bootstrap card por cada item       
-          divTarjetas.append(createBootstrapCardFromItem(item, "border-left-success", formatNumberToCurrency(item.balance) + " &euro; - L&iacute;mite " + formatNumberToCurrency(item.limit) + " &euro;", "fab fa-cc-amex "));         
+          divTarjetas.append(createBootstrapCardFromItem(item, "border-left-success", formatNumberToCurrency(item.saldo) + " &euro; - L&iacute;mite " + formatNumberToCurrency(item.limit) + " &euro;", "fab fa-cc-amex "));         
         });
         // Una vez calculado el total de saldo de las tarjetas, se muestra
         $("#spanTotalTarjetasCredito").html(formatNumberToCurrency(totalTarjetas));
@@ -44,8 +44,8 @@
         var divPrestamos = $("#divPrestamos");
         divPrestamos.html(""); // Formateo el hueco de los prÃ©stamos
         $.each(data.loans, function (i, item)  {
-          totalPrestamos += item.balance;  
-          divPrestamos.append(createBootstrapCardFromItem(item, "border-left-danger", formatNumberToCurrency(item.balance) + " &euro;", "far fa-angry "));         
+          totalPrestamos += item.saldo;  
+          divPrestamos.append(createBootstrapCardFromItem(item, "border-left-danger", formatNumberToCurrency(item.saldo) + " &euro;", "far fa-angry "));         
         });
         // Una vez calculado el total de saldo de los prÃ©stamos, se muestra
         $("#spanTotalPrestamos").html(formatNumberToCurrency(totalPrestamos));
@@ -94,7 +94,7 @@
           <div class="row" id="divCuentasCorrientes"></div>
 
 
-          <!-- Tarjetas de crédito y débito -->
+          <!-- Tarjetas de crï¿½dito y dï¿½bito -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tarjetas - <span id="spanTotalTarjetasCredito"></span> &euro;</h1>
           </div>

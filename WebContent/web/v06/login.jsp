@@ -27,8 +27,9 @@
                   </div>
                   <form id="formLogin">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user checkValidity" id="usuOrEmail" aria-describedby="emailHelp"
+                      <input type="text" class="form-control form-control-user checkValidity" id="usuOrEmail" aria-describedby="emailHelp"
                        placeholder="Usuario o correo electr&oacute;nico" validity="email">
+                       <!-- Con el atributo validity le damos el dato a validar, cuyo patrÃ³n estÃ¡ en en el fichero de jquery-utils.js -->
                        <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Debes introducir un email v&aacute;lido antes de intentar entrar</div>                                      
                    </div>
@@ -98,21 +99,21 @@
           if (!checkFormValidity($("#formLogin"))) { // Compruebo la validaciÃ³n con una funciÃ³n que podemos encontrar en el fichero jquery-utils.js
             showAlertMessage($("#login-container"), ALERT_DANGER, "Datos no v&aacute;lidos", "Has introducido al menos un dato no v&aacute;lido"); // Muestro una alerta
           }
-          else { // En este caso hemos comprobado que el formulario es válido, llamamos al servidor
-            insertWaitingIcon($("#spinner")); // Hago que un componente incorpore el símbolo de carga
+          else { // En este caso hemos comprobado que el formulario es vï¿½lido, llamamos al servidor
+            insertWaitingIcon($("#spinner")); // Hago que un componente incorpore el sï¿½mbolo de carga
         
         // Construyo un objeto con los datos del formulario introducidos por el usuario
         var obj = { usuOrEmail: $("#usuOrEmail").val(), 
                     pass: $("#pass").val() };
   
-        // Envío la petición JSON
-        sendJsonRequest("/v04/LoginUsuario", // URL a la que envío la petición
-          JSON.stringify(obj),  // Datos JSON que envío al Servlet
-          function (data, status) {  // Función que se ejecutará cuando la petición se realice con éxito
+        // Envï¿½o la peticiï¿½n JSON
+        sendJsonRequest("/LoginUsuario", // URL a la que envï¿½o la peticiï¿½n
+          JSON.stringify(obj),  // Datos JSON que envï¿½o al Servlet
+          function (data, status) {  // Funciï¿½n que se ejecutarï¿½ cuando la peticiï¿½n se realice con ï¿½xito
             if (data == null) { // Si el servicio devuelve "null" significa que no se ha encontrado un usuario como el que se quiere autenticar
-              showAlertMessage($("#login-container"), ALERT_DANGER, "Error", "El usuario y/o contraseña introducidos no son válidos");
+              showAlertMessage($("#login-container"), ALERT_DANGER, "Error", "El usuario y/o contraseï¿½a introducidos no son vï¿½lidos");
             }
-            else { // Autenticación correcta, redirigimos al portal de la aplicación.
+            else { // Autenticaciï¿½n correcta, redirigimos al portal de la aplicaciï¿½n.
               window.location.href = "portal.jsp";
             }
             removeWaitingIcon($("#spinner"));  // Detengo la animaciÃ³n de "Waiting"

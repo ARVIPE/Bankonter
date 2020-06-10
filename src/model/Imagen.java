@@ -11,15 +11,17 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Imagen.findAll", query="SELECT i FROM Imagen i")
-public class Imagen implements Serializable {
+public class Imagen extends Entidad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	private int id;
 
-	private Object contenido;
+	@Lob
+	private byte[] contenido;
 
-	private Object miniatura;
+	@Lob
+	private byte[] miniatura;
 
 	//bi-directional many-to-one association to Usuario
 	@OneToMany(mappedBy="imagen")
@@ -36,19 +38,19 @@ public class Imagen implements Serializable {
 		this.id = id;
 	}
 
-	public Object getContenido() {
+	public byte[] getContenido() {
 		return this.contenido;
 	}
 
-	public void setContenido(Object contenido) {
+	public void setContenido(byte[] contenido) {
 		this.contenido = contenido;
 	}
 
-	public Object getMiniatura() {
+	public byte[] getMiniatura() {
 		return this.miniatura;
 	}
 
-	public void setMiniatura(Object miniatura) {
+	public void setMiniatura(byte[] miniatura) {
 		this.miniatura = miniatura;
 	}
 

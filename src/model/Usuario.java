@@ -40,14 +40,14 @@ public class Usuario extends Entidad implements Serializable {
 
 	private String telefono;
 
+	//bi-directional many-to-one association to Contrato
+	@OneToMany(mappedBy="usuario")
+	private List<Contrato> contratos;
+
 	//bi-directional many-to-one association to Imagen
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="idImagen")
 	private Imagen imagen;
-
-	//bi-directional many-to-one association to Contrato
-	@OneToMany(mappedBy="usuario")
-	private List<Contrato> contratos;
 
 	public Usuario() {
 	}
@@ -140,14 +140,6 @@ public class Usuario extends Entidad implements Serializable {
 		this.telefono = telefono;
 	}
 
-	public Imagen getImagen() {
-		return this.imagen;
-	}
-
-	public void setImagen(Imagen imagen) {
-		this.imagen = imagen;
-	}
-
 	public List<Contrato> getContratos() {
 		return this.contratos;
 	}
@@ -168,6 +160,14 @@ public class Usuario extends Entidad implements Serializable {
 		contrato.setUsuario(null);
 
 		return contrato;
+	}
+
+	public Imagen getImagen() {
+		return this.imagen;
+	}
+
+	public void setImagen(Imagen imagen) {
+		this.imagen = imagen;
 	}
 
 }

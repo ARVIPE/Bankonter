@@ -91,7 +91,7 @@
                     pass: $("#pass").val() };
   
         // Envío la petición JSON
-        sendJsonRequest("/LoginUsuario", // URL a la que envío la petición
+        sendJsonRequest("/LoginUsuario1", // URL a la que envío la petición
           JSON.stringify(obj),  // Datos JSON que envío al Servlet
           function (data, status) {  // Función que se ejecutará cuando la petición se realice con éxito
             if (data == null) { // Si el servicio devuelve "null" significa que no se ha encontrado un usuario como el que se quiere autenticar
@@ -118,7 +118,7 @@
     $(document).ready(function () {
    
        $("#logar").click(function(){
-        sendJsonRequest ("/Bankonter/LoginUsuario", 
+        sendJsonRequest ("/Bankonter/LoginUsuario1", 
         '{"usuarioOMail":"rafa@rafa.com", "pass":"1234"}',
         function (data, status) {
           alert(data);
