@@ -38,7 +38,6 @@ public class GetDatosUsuarioGuardadoEnSesion extends SuperTipoServlet {
      */
     public GetDatosUsuarioGuardadoEnSesion() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 

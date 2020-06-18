@@ -20,14 +20,7 @@
 
     <script src="../js/jquery-utils.js"></script>
     
-    <!-- La siguiente l�nea es importante para que en cada versi�n de Bankonter se llame a los servlets de la misma versi�n.
-    	Se est� llamando a una funci�n contenida dentro del fichero "../js/jquery-utils.js" y estableciendo un valor que, despu�s,
-    	ser� utilizado por la funci�n sendJSonRequest. 
-    	Este valor se debe cambiar en cada versi�n de Bankonter
-     -->
-    <script>
-    	setServletsPrefix("<%=request.getContextPath() %>");
-    </script>
+
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" type="text/css">

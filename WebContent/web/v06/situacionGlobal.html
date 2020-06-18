@@ -34,7 +34,7 @@
         $.each(data.creditCards, function (i, item)  {
           totalTarjetas += item.saldo; // Calculo el saldo total sumado de todas las cuentas   
           // Incorporo al div correspondiente una bootstrap card por cada item       
-          divTarjetas.append(createBootstrapCardFromItem(item, "border-left-success", formatNumberToCurrency(item.saldo) + " &euro; - L&iacute;mite " + formatNumberToCurrency(item.limit) + " &euro;", "fab fa-cc-amex "));         
+          divTarjetas.append(createBootstrapCardFromItem(item, "border-left-success", formatNumberToCurrency(item.saldo) + " &euro; - L&iacute;mite " + formatNumberToCurrency(item.limite) + " &euro;", "fab fa-cc-amex "));         
         });
         // Una vez calculado el total de saldo de las tarjetas, se muestra
         $("#spanTotalTarjetasCredito").html(formatNumberToCurrency(totalTarjetas));

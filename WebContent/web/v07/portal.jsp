@@ -45,14 +45,14 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="portal.jsp">
+  	      <span role="button" class="nav-link bankonterNavBarLink" toLoadPageContent="situacionGlobal.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Situaci&oacute;n global</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="portal.jsp">
+         <span role="button" class="nav-link bankonterNavBarLink" toLoadPageContent="transferencia.html">       <a class="nav-link" href="portal.jsp">
           <i class="fas fa-fw fa-table"></i>
           <span>Transferencias</span></a>
       </li>  

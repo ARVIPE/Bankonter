@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 
@@ -26,9 +25,6 @@ public class Usuario extends Entidad implements Serializable {
 	private String dniNie;
 
 	private String email;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date fechaNac;
 
 	private String localidad;
 
@@ -90,14 +86,6 @@ public class Usuario extends Entidad implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public Date getFechaNac() {
-		return this.fechaNac;
-	}
-
-	public void setFechaNac(Date fechaNac) {
-		this.fechaNac = fechaNac;
 	}
 
 	public String getLocalidad() {

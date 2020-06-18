@@ -78,10 +78,10 @@ public class GetSituacionGlobalUsuario extends SuperTipoServlet {
 						cuentasCorrientes.add(hm);
 					} 
 					else if (c.getTipocontrato().getId() == TipoContratoControlador.TARJETA_DEBITO.getId()) {
-						hm.put("limite", c.getLimite());
 						tarjetasDebito.add(hm);
 					}
 					else if (c.getTipocontrato().getId() == TipoContratoControlador.TARJETA_CREDITO.getId()) {
+						hm.put("limite", c.getLimite());
 						tarjetasCredito.add(hm);
 					}
 					else if (c.getTipocontrato().getId() == TipoContratoControlador.PRESTAMO.getId()) {

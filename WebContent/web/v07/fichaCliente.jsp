@@ -40,7 +40,6 @@ if (usuario == null){
 if (usuario.getDniNie() == null) usuario.setDniNie("");
 if (usuario.getNombreComp() == null) usuario.setNombreComp("");
 if (usuario.getApellidos() == null) usuario.setApellidos("");
-if (usuario.getFechaNac() == null) usuario.setFechaNac(null);
 if (usuario.getDireccion() == null) usuario.setDireccion("");
 if (usuario.getLocalidad() == null) usuario.setLocalidad("");
 if (usuario.getTelefono() == null) usuario.setTelefono("");
@@ -72,12 +71,12 @@ if (RequestUtils.getStringParameterFromHashMap(hashMap, "guardar") != null){
 		usuario.setDniNie(RequestUtils.getStringParameterFromHashMap(hashMap, "dniNie"));
 		usuario.setNombreComp(RequestUtils.getStringParameterFromHashMap(hashMap, "nombreCom"));
 		usuario.setApellidos(RequestUtils.getStringParameterFromHashMap(hashMap, "apellidos"));
-		try{
+		/* try{
 			usuario.setFechaNac(sdfFechaNac.parse(RequestUtils.getStringParameterFromHashMap(hashMap, "fechaNac")));
 		}catch(Exception e){
 			e.printStackTrace();
 			
-		}
+		} */
 		usuario.setDireccion(RequestUtils.getStringParameterFromHashMap(hashMap, "direccion"));
 		usuario.setLocalidad(RequestUtils.getStringParameterFromHashMap(hashMap, "localidad"));
 		usuario.setTelefono(RequestUtils.getStringParameterFromHashMap(hashMap, "telefono"));
@@ -143,11 +142,11 @@ if (RequestUtils.getStringParameterFromHashMap(hashMap, "guardar") != null){
 					 </div>
  					  <div class="form-group row">
 					 	<label class="col-lg-3 col-form-label form-control-label" for="fechaNac">Fecha de Nacimiento:</label>
-					 	<div class="col-lg-9">
+<%-- 					 	<div class="col-lg-9">
 					 		<input name="fechaNac" class="form-control" type="text"
 					 		 id="fechaNac" value="<%= ((usuario.getFechaNac() != null)? sdfFechaNac.format(usuario.getFechaNac()) : "") %>" />
 					 	</div>
-					 </div>
+					 </div> --%>
 					  <div class="form-group row">
 					 	<label class="col-lg-3 col-form-label form-control-label" for="direccion">Dirección:</label>
 					 	<div class="col-lg-9">

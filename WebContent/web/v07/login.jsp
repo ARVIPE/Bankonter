@@ -27,8 +27,9 @@
                   </div>
                   <form id="formLogin">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user checkValidity" id="usuOrEmail" aria-describedby="emailHelp"
+                      <input type="text" class="form-control form-control-user checkValidity" id="usuOrEmail" aria-describedby="emailHelp"
                        placeholder="Usuario o correo electr&oacute;nico" validity="email">
+                       <!-- Con el atributo validity le damos el dato a validar, cuyo patrón está en en el fichero de jquery-utils.js -->
                        <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Debes introducir un email v&aacute;lido antes de intentar entrar</div>                                      
                    </div>
@@ -98,24 +99,21 @@
           if (!checkFormValidity($("#formLogin"))) { // Compruebo la validación con una función que podemos encontrar en el fichero jquery-utils.js
             showAlertMessage($("#login-container"), ALERT_DANGER, "Datos no v&aacute;lidos", "Has introducido al menos un dato no v&aacute;lido"); // Muestro una alerta
           }
-          else { // En este caso hemos comprobado que el formulario es válido, llamamos al servidor
-            insertWaitingIcon($("#spinner")); // Hago que un componente incorpore el símbolo de carga
-           
-        
-        insertWaitingIcon($("#spinner")); // Hago que un componente incorpore el símbolo de carga
+          else { // En este caso hemos comprobado que el formulario es v�lido, llamamos al servidor
+            insertWaitingIcon($("#spinner")); // Hago que un componente incorpore el s�mbolo de carga
         
         // Construyo un objeto con los datos del formulario introducidos por el usuario
         var obj = { usuOrEmail: $("#usuOrEmail").val(), 
                     pass: $("#pass").val() };
   
-        // Envío la petición JSON
-        sendJsonRequest("/v04/LoginUsuario", // URL a la que envío la petición
-          JSON.stringify(obj),  // Datos JSON que envío al Servlet
-          function (data, status) {  // Función que se ejecutará cuando la petición se realice con éxito
+        // Env�o la petici�n JSON
+        sendJsonRequest("/LoginUsuario", // URL a la que env�o la petici�n
+          JSON.stringify(obj),  // Datos JSON que env�o al Servlet
+          function (data, status) {  // Funci�n que se ejecutar� cuando la petici�n se realice con �xito
             if (data == null) { // Si el servicio devuelve "null" significa que no se ha encontrado un usuario como el que se quiere autenticar
-              showAlertMessage($("#login-container"), ALERT_DANGER, "Error", "El usuario y/o contrase&ntilde;a introducidos no son v&aacute;lidos");
+              showAlertMessage($("#login-container"), ALERT_DANGER, "Error", "El usuario y/o contrase�a introducidos no son v�lidos");
             }
-            else { // Autenticación correcta, redirigimos al portal de la aplicación.
+            else { // Autenticaci�n correcta, redirigimos al portal de la aplicaci�n.
               window.location.href = "portal.jsp";
             }
             removeWaitingIcon($("#spinner"));  // Detengo la animación de "Waiting"
@@ -137,7 +135,7 @@
     $(document).ready(function () {
    
        $("#logar").click(function(){
-        sendJsonRequest ("/Bankonter/LoginUsuario", 
+        sendJsonRequest ("/LoginUsuario", 
         '{"usuarioOMail":"rafa@rafa.com", "pass":"1234"}',
         function (data, status) {
           alert(data);

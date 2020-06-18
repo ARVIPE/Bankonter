@@ -10,13 +10,15 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQuery(name="Sequence.findAll", query="SELECT s FROM Sequence s")
-public class Sequence implements Serializable {
+public class Sequence extends Entidad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="SEQ_COUNT")
 	private int seqCount;
+
+
 
 	@Column(name="SEQ_NAME")
 	private String seqName;
@@ -34,12 +36,21 @@ public class Sequence implements Serializable {
 	}
 
 
+
+
+
 	public String getSeqName() {
 		return this.seqName;
 	}
 
 	public void setSeqName(String seqName) {
 		this.seqName = seqName;
+	}
+
+	@Override
+	public int getId() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

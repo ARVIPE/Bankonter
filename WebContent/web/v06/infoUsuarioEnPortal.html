@@ -8,8 +8,8 @@
                     if (data != null) { // Si el servicio devuelve "null" significa que no se ha encontrado un usuario como el que se quiere autenticar
                       $("#nombreUsuario").html((data.userName != null)? data.userName : ".....");
                       // Si obtengo los datos de la miniatura del usuario, la pongo en pantalla, si no cargo una imagen genérica
-                      if (data.image != null) {
-                        $("#miniaturaImagenUsuario").attr("src", "data:image/png;base64," + data.image);
+                      if (data.imagen != null) {
+                        $("#miniaturaImagenUsuario").attr("src", "data:imagen/png;base64," + data.imagen);
                       }
                       else {
                         $("#miniaturaImagenUsuario").attr("src", "../img/homer.png");
@@ -28,7 +28,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item bankonterNavBarLink infoFicha" toLoadInPageContent="fichaUsuario.html">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Mis datos
                 </a>

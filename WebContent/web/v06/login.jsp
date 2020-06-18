@@ -135,7 +135,7 @@
     $(document).ready(function () {
    
        $("#logar").click(function(){
-        sendJsonRequest ("/Bankonter/LoginUsuario", 
+        sendJsonRequest ("/LoginUsuario", 
         '{"usuarioOMail":"rafa@rafa.com", "pass":"1234"}',
         function (data, status) {
           alert(data);

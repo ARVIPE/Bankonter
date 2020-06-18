@@ -48,7 +48,6 @@
       	<span role="button" class="nav-link bankonterNavBarLink" toLoadPageContent="situacionGlobal.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Situaci&oacute;n global</span> </span>
-
       </li>
 
       <!-- Nav Item - Tables -->
