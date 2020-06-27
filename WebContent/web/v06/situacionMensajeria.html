@@ -1,0 +1,14 @@
+<script>
+    $(document).ready(function(){
+        sendJsonRequest("/GetSituacionMensajeria", //URL a la que envio la petición
+        '', // Datos JSON que envío al Servlet
+        function(data, status){ // Función que se ejecutará cuando la petición se realice con éxito
+            if (data != null){ // Si el servicio devuelve 'null' significa que no se ha encontrado un usuario como el que se quiere atenticar
+
+                // Paso por la lista de correos
+
+            };
+        },
+        );
+    });
+</script>

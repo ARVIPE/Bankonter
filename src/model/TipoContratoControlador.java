@@ -43,6 +43,10 @@ public class TipoContratoControlador extends Controlador {
 		return (Tipocontrato) super.find(id);
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public List<Tipocontrato> findAllContratos(){
 		List<Tipocontrato> entities = new ArrayList<Tipocontrato>();
 		EntityManager em = getEntityManagerFactory().createEntityManager();

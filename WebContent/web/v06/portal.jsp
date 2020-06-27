@@ -13,7 +13,7 @@
   $(document).ready(function() {
     // Realizo la carga de las diferentes partes de la pÃ¡gina del portal
     $("#datosUsuarioEnSesion").load("infoUsuarioEnPortal.html"); // Cargo la esquina superior izquierda, con los datos del usuario y su foto
-    $("#pageContent").load("situacionGlobal.html"); // Cargo la situación global, un resumen de cuentas, préstamos y tarjetas, de momento estático
+    $("#pageContent").load("situacionGlobal.html"); // Cargo la situaciï¿½n global, un resumen de cuentas, prï¿½stamos y tarjetas, de momento estï¿½tico
 })
 
 </script>
@@ -45,16 +45,18 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-      	<span role="button" class="nav-link bankonterNavBarLink" toLoadPageContent="situacionGlobal.html">
+      	<span role="button" class="nav-link bankonterNavBarLink" toLoadInPageContent="situacionGlobal.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Situaci&oacute;n global</span> </span>
+          <span>Situaci&oacute;n global</span>
+         </span>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <span role="button" class="nav-link bankonterNavBarLink" toLoadPageContent="transferencia.html">
+        <span role="button" class="nav-link bankonterNavBarLink" toLoadInPageContent="transferencia.html">
           <i class="fas fa-fw fa-table"></i>
-          <span>Transferencias</span></span>
+          <span>Transferencias</span>
+        </span>
       </li>  
 
       <!-- Divider -->

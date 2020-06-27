@@ -227,10 +227,12 @@ function checkInputFormValidity (inputFormElement) {
     var regularExpression = getRegularExpressionValidityFromElement($(inputFormElement));
     if (!regularExpression.test(inputFormElement.val())) { // Compruebo la validación 
         inputFormElement.addClass("is-invalid"); // Incluir esta clase provaca un efecto visual en el elemento del formulario
+        inputFormElement.removeClass("is-valid"); // si los datos están mal, desaparecerá el mensaje de correcto y se pondrá el incorrecto
         return false;
     }
     else {
-        inputFormElement.removeClass("is-invalid");
+        inputFormElement.removeClass("is-invalid"); // si los datos están bien, desaparecerá el mensaje correcto y aparecerá el correcto
+        inputFormElement.addClass("is-valid");
         return true;
     }
     

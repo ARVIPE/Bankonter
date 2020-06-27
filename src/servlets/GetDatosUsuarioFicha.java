@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 
+
 import java.util.HashMap;
 
 import javax.servlet.ServletException;
@@ -80,7 +81,10 @@ public class GetDatosUsuarioFicha extends SuperTipoServlet {
 			} 
 			
 			// Buscamos la acción a realizar
-			String accion = rootNode.path("accion").asText();
+			String accion = null;
+			if (rootNode.path("accion") != null) {
+				accion = rootNode.path("accion").asText();
+			}
 			Imagen i = null;
 			
 			// Si el usuario existe y la acción es la de almacenar, obtenemos los datos del cliente por el JSON
