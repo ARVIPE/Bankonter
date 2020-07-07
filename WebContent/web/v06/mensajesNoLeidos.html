@@ -9,8 +9,10 @@
             // Paso por cada uno de los mensajes, creando su bootstrap card 
               
             var divMensajes = $("#divMensajes");
+            var numeroMensajesNoLeidos = 0;
             divMensajes.html(""); // Formateo el hueco para los mensajes
-            $.each(data.idMensajes, function (i, item)  {
+            $.each(data.mensajes_No_Leidos, function (i, item)  {
+              numeroMensajesNoLeidos ++;
              
               // Incorporo al div correspondiente una bootstrap card por cada item       
               divMensajes.append(createBootstrapCardFromItem(item, "border-left-primary"));       

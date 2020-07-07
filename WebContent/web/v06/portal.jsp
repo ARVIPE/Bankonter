@@ -59,6 +59,14 @@
         </span>
       </li>  
 
+      <!-- Nav Item - Mensajes-->
+      <li class="nav-item">
+        <span role="button" class="nav-link bankonterNavBarLink" toloadInPageContent="situacionMensajeria.html">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <span>Mensajer&iacute;a</span>
+        </span>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -90,7 +98,7 @@
  
             <!-- Nav Item - Messages -->
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="mensajesNoLeidos.html" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
                 <span class="badge badge-danger badge-counter">0</span>

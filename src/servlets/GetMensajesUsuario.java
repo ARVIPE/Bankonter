@@ -56,9 +56,9 @@ public class GetMensajesUsuario extends SuperTipoServlet {
 			// Recupero al usuario guardado en la sesión y luego lo busco en la BBDD
 			u = (Usuario) request.getSession().getAttribute(LoginUsuario.ID_USER_SESSION);
 			
-			List<Mensajeria> mensajes = MensajeriaControlador.getControlador().findAllMensajes();
+			List<Mensajeria> mensajes = MensajeriaControlador.getControlador().findAllMensajes(u.getId());
 			List<HashMap<String, Object>> mensajesLeidos = new ArrayList<HashMap<String,Object>>();
-			//List<HashMap<String, Object>> mensajesNoLeidos = new ArrayList<HashMap<String,Object>>();
+			List<HashMap<String, Object>> mensajesNoLeidos = new ArrayList<HashMap<String,Object>>();
 			
 			if (u != null) {
 				// si existe un usuario guardado en la sesión, obtengo sus datos
@@ -75,19 +75,20 @@ public class GetMensajesUsuario extends SuperTipoServlet {
 					hm.put("id_emisor_apellido", m.getUsuario1().getApellidos());
 					hm.put("id_receptor_nombre", m.getUsuario2().getNombreUsuario());
 					hm.put("id_receptor_apellido", m.getUsuario2().getApellidos());
+					hm.put("leido", m.getLeido());
 					
-//					if(m.getLeido() == true) {
-//						mensajesLeidos.add(hm);
-//					}else {
-//						mensajesNoLeidos.add(hm);
-//					}
+					if(m.getLeido() == true) {
+						mensajesLeidos.add(hm);
+					}else {
+						mensajesNoLeidos.add(hm);
+					}
 					mensajesLeidos.add(hm);
 				}
 				
 				// Relleno el dto para construir el json de respuesta al servlet
 //				dto.put("userName", u.getNombreUsuario());
 //				dto.put("mensajes_leidos", mensajesLeidos);
-//				dto.put("mensajes_No_Leidos", mensajesNoLeidos);
+		//		dto.put("mensajes_No_Leidos", mensajesNoLeidos);
 				dto.put("idMensajes", mensajesLeidos);
 			}
 			
